@@ -1,5 +1,5 @@
 function adc_crlb_demo()
-    % Calculates the CRLB for ADC as a function dependent variables in x, and independent variables b and sigma
+    % Calculates the CRLB for ADC as a function of the dependent variables in x, and independent variables b and sigma
     function val = cost(x,b,sigma)
         if size(unique(b),1) > 1
             df = @(x,b) [exp(-b*x(2)) -b.*x(1).*exp(-b*x(2))]; % partial derivates of ADC model with respect to S_0 (x(1)) and ADC (x(2))
